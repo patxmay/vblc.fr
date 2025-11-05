@@ -1,0 +1,147 @@
+.bo_matchs_accompanists_teams_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accompanists_matchs_teams_filter_frame {
+  width: 100%;
+  padding: 10px;
+}
+
+.accompanists_teams_filter_by_season {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  margin-block: 10px;
+  padding-inline: 10px;
+}
+
+.teams_cards_big_frame {
+  width: 100%;
+}
+
+.accompanists_teams_cards {
+  width: 150px;
+  height: 70px;
+  background-color: #FFFFFF;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.accompanists_teams_cards_selected {
+  border: solid;
+  border-color: red;
+}
+
+.accompanists_teams_cards_category {
+  color: grey;
+}
+
+.matchs_selection_big_frame {
+  width: 100%;
+  padding: 10px;
+}
+
+.accompanists_teams_cards_name_highlighted {
+  font-size: medium;
+  font-weight: 600;
+}
+
+.match_cards {
+  display: flex;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.match_cards_selected {
+  display: flex;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  cursor: pointer;
+  border: solid;
+  border-color: red;
+}
+
+
+.accompanists_frame {
+  display: flex;
+}
+
+.input_update_big_frame {
+  width: 100%;
+}
+.input_update_frame {
+  width: 50%;
+}
+.accompanists_input_big_frame {
+  width: 100%;
+  padding: 10px;
+  /* background-color: red; */
+}
+
+.accompanist_input_frame {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 100%;
+  height: 250px;
+  margin: 10px;
+  align-items: center;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.space_right {
+  margin-right: 10px;
+}
+
+.input_small_width {
+  width: 100px;
+}
+
+.input_medium_width {
+  width: 200px;
+}
+
+.input_large_width {
+  width: 300px;
+}
+
+.match_update_input {
+
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  background-color: #ECF0F1;
+  margin-block: 10px;
+}
+
+.match_update_validation_button {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: green;
+  color: #FFFFFF;
+  font-size: medium;
+  cursor: pointer;
+  margin-block: 10px;
+
+
+}

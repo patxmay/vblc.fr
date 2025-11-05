@@ -1,0 +1,5 @@
+.bo_matchs_scores_teams_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

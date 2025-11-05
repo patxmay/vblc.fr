@@ -1,0 +1,268 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.subscription_frame {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-block: 40px;
+  padding-inline: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.subscription_new {
+  rotate: -10deg;
+  font-size: 40px;
+  font-weight: 800;
+  color: red;
+  margin: 20px;
+}
+
+.subscription_text {
+  font-size: xx-large;
+  font-weight: 500;
+  margin: 20px;
+  color: red
+}
+
+.subscription_button {
+  width: 15em;
+  height: 3em;
+  border-radius: 2em;
+  background-color: red;
+  font-size: medium;
+  color: white;
+  margin: 20px;
+  border: none;
+  box-shadow: 5px 5px 5px white;
+  cursor: pointer;
+}
+
+.trainning_blocs {
+  width: 100%;
+  margin-block: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.trainning_places {
+  width: 49%;
+  align-items: center;
+  padding-top: 10px;
+  padding-inline: 10px;
+
+}
+
+.trainning_places_frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+
+}
+
+.trainning_place {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.place_name {
+  padding-block: 10px;
+  color: black;
+}
+
+.zip_city {
+  display: flex;
+  flex-direction: row;
+}
+
+.trainning_address_frame {
+  text-align: center;
+}
+
+.trainning_address {
+  color: black;
+  margin-inline: 3px;
+  font-size: small;
+}
+
+.picture_frame {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.place_picture {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.trainning_dates {
+  width: 49%;
+  background-color: white;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.selector_and_array {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.selector {
+  display: flex;
+  width: 50%;
+  height: 40px;
+  margin-top: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F6F7;
+  border-color: lightgray;
+  border-style: solid;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  cursor: pointer;
+}
+
+.selector_selected {
+  display: flex;
+  width: 50%;
+  height: 40px;
+  margin-top: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-color: lightgray;
+  border-style: solid;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 0px;
+  cursor: pointer;
+}
+
+.categoryName {
+  color: #000;
+}
+
+.categoryNameSelected {
+  color: red
+}
+
+.trainning_array {
+  padding-top: 20px;
+  border-color: lightgray;
+  border-style: solid;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+}
+
+.day {
+  width: 50%;
+  text-align: center;
+
+}
+
+.trainers {
+  width: 50%;
+  text-align: center;
+  margin-block: 10px;
+}
+
+.trainning_hours_places {
+  font-size: small;
+  color: grey;
+}
+
+.teams {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+  border-color: lightgray;
+  border-top-width: 0.5px;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-style: dashed;
+}
+
+.teams_item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 80px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+@media screen and (max-width: 540px) {
+  .subscription_frame {
+    flex-direction: column;
+  }
+
+  .trainning_places_frame {
+    flex-direction: column;
+  }
+  .trainning_blocs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trainning_places {
+    width: 100%;
+    align-items: center;
+  }
+
+  .trainning_place {
+    width: 100%;
+  }
+
+  .trainning_dates {
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+
+  }
+}

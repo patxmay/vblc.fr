@@ -1,0 +1,89 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.signIn_body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signIn_bloc {
+  display: flex;
+  flex-direction: row;
+  margin-block: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.signIn_frame{
+  width: 40vw;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signIn_title {
+  margin-block: 10px;
+}
+
+.signIn_input_group{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signIn_input{
+  width: 60%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: lightgray;
+  padding-inline: 10px;
+  margin-inline: 10px;
+}
+
+.signIn_button{
+  cursor: pointer;
+  width: 30%;
+  height: 30px;
+  background-color: green;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 5px 5px 5px gray;
+  color: white;
+  font-size: medium;
+  margin-block: 10px;
+}
+
+.button_administrator{
+  border: none;
+}
+
+@media screen and (max-width: 540px) {
+  .signIn_bloc{
+    flex-direction: column;
+  }
+
+  .signIn_frame {
+    width: 70vw;
+    height: 200px;
+  }
+
+  .signIn_button{
+    width: 40%;
+  }
+  
+}

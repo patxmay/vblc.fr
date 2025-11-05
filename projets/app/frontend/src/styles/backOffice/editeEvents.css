@@ -1,0 +1,290 @@
+.bo_edit_events_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.events_cards_frame {
+  width: 100%;
+  padding: 10px;
+}
+
+.edit_event_item_subsection {
+  margin-block: 10px;
+  width: 20%;
+}
+
+.edit_event_filter {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+}
+
+.section_big_title {
+  margin-block: 10px;
+  font-weight: 500;
+}
+
+.events_cards_display {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.events_cards {
+  width: 200px;
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.events_cards_selected {
+  border: solid;
+  border-color: red;
+}
+
+.events_cards:hover {
+  cursor: pointer;
+}
+
+.events_cards_title {
+  text-align: center;
+  font-weight: 500;
+}
+
+.edit_big_frame {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+}
+
+.each_item_to_modify {
+  display: flex;
+  flex-direction: row;
+  margin-block: 10px;
+  align-items: center;
+}
+
+.only_tournamentType_item {
+  margin-block: 10px;
+  align-items: center;
+}
+
+.rest {
+  display: flex;
+  flex-direction: row;
+  margin-block: 10px;
+  align-items: center;
+}
+
+.services {
+  padding-inline: 20px;
+}
+
+.event_item {
+  margin-inline: 20px;
+  margin-block: 10px;
+  font-weight: 500;
+}
+
+.event_data_catering {
+  width: 500px;
+}
+
+.display_catering_data_frame {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.eventTournament_items {
+  display: flex;
+}
+
+.event_item_label {
+  margin-right: 10px;
+}
+
+.large_event_item {
+  margin-inline: 20px;
+  width: 600px;
+  margin-block: 10px;
+  font-weight: 500;
+}
+
+
+.modify_button {
+  margin-left: 20px;
+}
+
+.tiny_input {
+  width: 70px;
+  margin-inline: 10px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding-inline: 10px;
+  margin-block: 10px;
+  background-color: lightgray;
+}
+
+.small_input {
+  width: 150px;
+  margin-inline: 10px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding-inline: 10px;
+  margin-block: 10px;
+  background-color: lightgray;
+}
+
+.medium_input {
+  width: 300px;
+  margin-inline: 10px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding-inline: 10px;
+  margin-block: 10px;
+  background-color: lightgray;
+}
+.large_input {
+  width: 500px;
+  margin-inline: 10px;
+  height: 35px;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-block: 10px;
+  background-color: lightgray;
+}
+
+.extra_large_input {
+  width: 700px;
+  margin-inline: 20px;
+  height: 100px;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin-block: 10px;
+  background-color: lightgray;
+}
+
+.button_frame {
+  display: flex;
+}
+
+.buttonInEditEvent {
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  margin-right: 10px;
+  margin-block: 10px;
+}
+
+.buttonInEditEvent:hover {
+  cursor: pointer;
+}
+
+.checkbox_label_small {
+  font-size: 10px;
+}
+
+.modify {
+  width: 60px;
+  background-color: red;
+}
+
+.cancel_button {
+  width: 70px;
+  background-color: red;
+}
+
+.validate_button {
+  width: 70px;
+  background-color: green;
+}
+
+.record_button {
+  width: 160px;
+  background-color: green;
+}
+
+.poster_display {
+  margin-inline: 10px;
+  width: 100px;
+  height: 150px;
+  background-color: lightgray;
+}
+
+.display_image {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.subscription_section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-inline: 20px;
+}
+
+
+.tournament_type {
+  display: flex;
+  background-color: red;
+}
+
+.tournament_type_label {
+  margin-right: 10px;
+}
+
+.tournament_items_to_modify {
+  display: flex;
+  align-items: center;
+}
+
+.section_subTitle {
+  display: flex;
+  align-items: center;
+  margin-inline: 20px;
+}
+
+
+
+.tournament_data {
+  display: flex;
+  box-shadow: 2px 2px 2px lightgray;
+  border-radius: 10px;
+}
+
+.service_title {
+  width: 160px;
+}
+
+.checkBox_label {
+  margin-right: 10px
+}
+
+.upload_button {
+  margin: 10px;
+  width: 400px
+}
+
+.text_color_grey {
+  color: lightgray;
+}

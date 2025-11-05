@@ -1,0 +1,118 @@
+.bo_matchs_teams_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.matchs_teams_filter_frame {
+  width: 100%;
+  padding: 10px;
+}
+
+.teams_filter_by_season {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  margin-block: 10px;
+  padding-inline: 10px;
+}
+
+.teams_cards_big_frame {
+  width: 100%;
+}
+
+.teams_cards {
+  width: 150px;
+  height: 70px;
+  background-color: #FFFFFF;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.teams_cards_selected {
+  border: solid;
+  border-color: red;
+}
+
+.teams_cards_category {
+  color: grey;
+}
+
+.teams_cards_name_highlighted {
+  font-weight: 600;
+}
+
+.matchs_input_big_frame {
+  width: 100%;
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.form_items {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+}
+
+.form_item_label {
+  width: 300px;
+}
+
+.match_form_text_input_short {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #F0F3F4;
+  margin-right: 10px;
+  padding-inline: 10px;
+}
+
+.match_form_text_input_medium {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  padding-inline: 10px;
+  margin-right: 10px;
+  background-color: #F0F3F4;
+}
+
+.match_form_text_input_large {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #F0F3F4;
+  margin-right: 10px;
+  padding-inline: 10px;
+}
+
+.match_form_submit_button_frame {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  margin-block: 30px;
+}
+
+.match_form_submit_button {
+  width: 400px;
+  height: 30px;
+  background-color: green;
+  border: none;
+  border-radius: 15px ;
+  font-size: medium;
+  color: #FFFFFF;
+  cursor: pointer;
+}

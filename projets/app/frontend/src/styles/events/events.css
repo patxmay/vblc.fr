@@ -1,0 +1,159 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.presentation_blocs {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.presentation_text {
+  margin-top: 10px;
+  line-height: 25px;
+}
+
+.events_thumbnail_big_blocs {
+  width: 100%;
+}
+
+.events_thumbnail_blocs {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.event_frame_thumbnail {
+  width: 300px;
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.events_picture {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poster_size_thumbnail {
+  height: 100%;
+}
+
+.events_title_bloc {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.events_title {
+  text-align: center;
+  color: red;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.events_date_bloc {
+  margin-block: 10px;
+  display: flex;
+  align-items:flex-start;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.events_date {
+  text-align: center;
+  color: gray;
+  font-size: medium;
+}
+
+.events_button_bloc {
+  margin-block: 10px;
+  height: 30px;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.events_info_button {
+  width: 150px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: red;
+  border: none;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+
+}
+
+.event_list_big_bloc {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding-block: 20px;
+}
+
+.event_list_bloc {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.event_list_frame {
+  width: 200px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 5px lightgrey;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.event_list {
+  text-align: center;
+  font-size: medium;
+  font-weight: 300;
+  color: red;
+}
+
+@media screen and (max-width: 540px) {
+  .event_list_frame {
+    width: 100%;
+  }
+}

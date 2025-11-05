@@ -1,0 +1,289 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.event_details {
+  width: 100%;
+  min-height: 80vh;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.event_details_data {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+/* BLOC POSTER */
+.event_details_data_poster_frame {
+  width: 25%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 40px;
+
+}
+
+.event_details_data_poster {
+  width: 90%;
+  height: auto;
+}
+
+.event_details_data_button {
+  width: 60%;
+  height: 30px;
+  margin-block: 20px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-size: medium;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+/* BLOC DATA INFO */
+.event_details_data_info {
+  width: 75%;
+  padding: 10px;
+  padding-inline: 40px;
+}
+
+.event_details_data_info_title {
+  font-size: x-large;
+  font-weight: 300;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.event_details_data_info_date {
+  font-size: large;
+  font-weight: 300;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.event_details_data_info_city {
+  margin-bottom: 10px;
+}
+
+.event_details_data_info_content {
+  margin-bottom: 10px;
+}
+
+.display_linebreak {
+  white-space: pre-line;
+}
+
+.event_details_data_info_subtitle_first_level {
+  font-size: medium;
+  font-weight: 300;
+  color: red;
+  margin-bottom: 10px;
+}
+
+
+/* SECTION TOURNAMENT */
+.event_details_tournament {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.event_details_tournament_type {
+  width: 30%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #F0F3F4;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.event_details_tournament_type_info {
+  display: flex;
+}
+
+.event_details_tournament_type_info_subtitle {
+  margin-right: 10px;
+  width: 75px
+}
+
+.event_details_tournament_type_info_space_left {
+  margin-left: 4px;
+}
+
+/* SNACK AND BAR */
+.event_details_snack_and_bar_items {
+  display: flex;
+
+}
+
+.event_selected_data_info_subtitle_second_level {
+  margin-right: 10px;
+  width: 15%;
+  margin-bottom: 10px;
+}
+
+.event_selected_snack_and_bar_datas {
+  width: 85%;
+  margin-bottom: 10px;
+}
+
+/* SECTION LINE */
+.event_details_data_info_section_line {
+  margin-block: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.section_line {
+  width: 50%;
+  height: 1px;
+  background-color: lightgrey;
+}
+
+.event_selected_data_info_subtitle_first_level {
+  color: red;
+}
+
+.team_enrolled_big_big_frame {
+  margin-block: 10px;
+}
+
+.in_line {
+  display: flex;
+}
+
+.team_enrolled_big_frame {
+  display: flex;
+  align-items: center;
+
+}
+
+.tournament_enrolled_data_teamName_teamLavel_frame {
+  display: flex;
+}
+
+.tournament_section {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #F0F3F4;
+  margin-bottom: 10px;
+}
+
+.tournament_typeName {
+  font-weight: 700;
+  margin-block: 5px;
+}
+
+.tournament_enrolled_data_team_level {
+  margin-right: 20px;
+  width: 70px;
+  color: gray;
+}
+
+.tournament_enrolled_data_team_name {
+  margin-right: 20px;
+  width: 200px;
+  flex-wrap: nowrap;
+}
+
+.tournament_enrolled_data_team_datas {
+  display: flex;
+}
+
+.tournament_enrolled_data_team_member_name {
+  color: grey;
+  width: 100px;
+}
+
+
+/* DONNÉES DES PARTICIPANTS À UN ÉVENEMENT */
+
+.participant_datas {
+  color: grey;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 540px) {
+  .event_details_data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event_details_data_poster_frame {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event_details_data_poster {
+    width: 60%;
+    height: auto;
+  }
+
+  .event_details_data_info {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* SECTION TOURNAMENT */
+  .event_details_tournament {
+    flex-direction: column;
+  }
+
+  .event_details_tournament_type {
+    width: 90%;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+
+  .team_enrolled_big_frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  .tournament_enrolled_data_teamName_teamLavel_frame {
+    display: flex;
+  }
+
+  .tournament_enrolled_data_team_member_name {
+    width: 100%;
+  }
+
+  .tournament_enrolled_data_team_datas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .in_line {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event_selected_data_info_subtitle_second_level {
+    margin-right: 10px;
+    width: 35%;
+    margin-bottom: 10px;
+  }
+
+  .event_selected_snack_and_bar_datas {
+    width: 65%;
+    margin-bottom: 10px;
+  }
+
+}

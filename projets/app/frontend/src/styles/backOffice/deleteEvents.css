@@ -1,0 +1,84 @@
+.bo_delete_events_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bo_delete_events_cards_frame {
+  width: 100%;
+  padding: 10px;
+}
+
+.bo_delete_section_big_title {
+  margin-block: 10px;
+  font-weight: 500;
+}
+
+.bo_delete_event_filter {
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+}
+
+.bo_delete_events_cards_title {
+  text-align: center;
+  font-weight: 500;
+}
+
+.bo_delete_events_cards {
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.bo_delete_events_cards_selected {
+  border: solid;
+  border-color: red;
+}
+
+.bo_delete_events_cards:hover {
+  cursor: pointer;
+}
+
+.bo_delete_events_cards_display {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.bo_delete_events_button_frame {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.bo_delete_events_delete_button {
+  width: 100px;
+  height: 30px;
+  padding-inline: 10px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
+  margin-block: 20px;
+}
+
+.disactivated {
+  background-color: lightgrey;
+}
+
+.activated {
+  background-color: red;
+  cursor: pointer;
+}

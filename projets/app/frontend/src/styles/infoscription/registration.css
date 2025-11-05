@@ -1,0 +1,250 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.registration_process_big_frame {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.process_big_frame {
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly;
+  margin-block: 50px;
+}
+
+.process_step_frame {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 5px 5px 5px lightgray;
+  border-radius: 10px;
+}
+
+.process_icon_frame {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.process_text_frame {
+  width: 100%;
+  height: 80px;
+  margin-block: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process_text {
+  text-align: center;
+}
+
+.process_ffbv_info {
+  text-decoration: underline;
+  cursor: pointer;
+  color: red;
+  margin-top: 10px;
+}
+
+.process_button_frame {
+  width: 80%;
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.process_button {
+  width: inherit;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  font-size: medium;
+  color: red;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  box-shadow: 5px 5px 5px lightgray;
+  /* text-align: center; */
+}
+
+.process_href_button_frame {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+.process_href_button {
+  color: red;
+  text-align: center;
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.vblc_form {
+  color: red;
+  font-size: large;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.process_arrow_frame {
+  /* width: 40px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process_arrow {
+  color: red;
+  width: 30px;
+  height: 30px;
+}
+
+/* PARTIE LICENCE */
+
+.licenceAndPayment_frame {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.licences_big_frame {
+  width: 60%;
+  margin-right: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.licences_title_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.licences_title {
+  display: flex;
+  height: 100px;
+  background-color: lightgray;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.licences_title_label {
+  text-align: center;
+  font-size: medium;
+}
+
+.licences_items {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* PARTIE PAIEMENT */
+.paymentInfo_big_frame {
+  width: 40%;
+  background-color: #FFFFFF;
+  margin-left: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment_mode {
+  width: 100%;
+  padding: 10px;
+}
+
+.payment_mode_title {
+  font-size: medium;
+  font-weight: 600;
+}
+
+.bank_data {
+  font-size: medium;
+  font-weight: 300;
+}
+
+.payment_item {
+  margin-block: 15px;
+}
+
+.info_small {
+  font-size: x-small;
+  margin-block: 5px;
+
+}
+
+
+
+@media screen and (max-width: 540px) {
+  .process_big_frame {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process_step_frame {
+    width: 80%;
+    margin-block: 10px;
+  }
+
+  .process_arrow {
+    color: red;
+    width: 30px;
+    height: 30px;
+    rotate: 90deg;
+  }
+
+  .licenceAndPayment_frame {
+    flex-direction: column;
+  }
+
+  .licences_big_frame {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  .licences_title_label {
+    text-align: center;
+    font-size: smaller;
+  }
+
+  .paymentInfo_big_frame {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+
+
+}

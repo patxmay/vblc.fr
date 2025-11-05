@@ -1,0 +1,171 @@
+.bo_create_events_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.creation_frame {
+  width: 100%;
+  padding: 10px
+}
+
+/* SECTION LINE */
+.event_creation_tournament_section_line {
+  margin-block: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.tournament_section_line {
+  width: 50%;
+  height: 3px;
+  background-color: white;
+}
+
+.create_event_form_group {
+  margin-block: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.poster {
+  margin-inline: 10px;
+}
+
+.empty_poster {
+  margin-inline: 10px;
+  background-color: lightgray;
+}
+
+.eventName_placeholder {
+  color: lightgray;
+}
+
+.input {
+  height: 30px;
+  margin-inline: 10px;
+  border-radius: 10px;
+  border: none;
+  padding-inline: 10px;
+  background-color: #FFFFFF;
+}
+
+.tiny_width_input {
+  width: 50px;
+}
+
+.small_width_input {
+  width: 100px;
+}
+
+.large_width_input {
+  width: 300px
+}
+
+.extra_large_width_input {
+  width: 500px
+}
+
+.calendar {
+  display: flex;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  background-color: white;
+}
+
+.shortDescription {
+  width: 70%;
+}
+
+.description {
+  width: 70%;
+  height: 100px;
+}
+
+.service {
+  width: 80%
+}
+
+.service_items {
+  width: 20%;
+  padding-inline: 10px;
+}
+
+.service_offer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+
+}
+
+.input_service {
+  width: 70%;
+  height: 50px;
+}
+
+.upload_button {
+  margin: 10px;
+  width: 400px
+}
+
+.button {
+  height: 30px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: medium;
+  margin: 20px;
+  background-color: lightgray;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.validation {
+  background-color: green;
+}
+
+.record_cloudinary {
+  width: 200px;
+  background-color: green;
+}
+
+.input_frame_width {
+  width: 80%;
+}
+
+.tournament_types_frame {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+.tournament_types {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.margin_block {
+  margin-block: 10px;
+
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.title_frame_width {
+  width: 20%;
+}

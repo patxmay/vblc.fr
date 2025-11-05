@@ -1,0 +1,241 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.team_details_frame {
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+
+
+.team_title_bloc {
+  display: flex;
+  justify-content: center;
+}
+
+.team_title_item {
+  margin-right: 10px;
+}
+
+.team_details_picture_players {
+  width: 100%;
+  display: flex;
+}
+
+.team_details_picture_frame {
+  width: 80%;
+}
+
+.team_details_picture {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.team_details_players {
+  width: 20%;
+  padding: 10px;
+  border: dotted;
+  border-color: lightgrey;
+  border-radius: 10px;
+  /* background-color: violet; */
+}
+
+.coach_frame {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+.coach_label {
+  font-size: large;
+  font-weight: 300;
+}
+
+.coach_data {
+  margin-left: 10px;
+  font-size: large;
+  font-weight: 300;
+
+}
+
+.players_data {
+  font-size: large;
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.team_details_match {
+  width: 100%;
+  margin-block: 10px;
+  padding: 10px;
+  border: solid;
+  border-color: lightgrey;
+  border-radius: 10px;
+  
+}
+
+
+.match_frame {
+  margin-block: 10px;
+  width: 100%;
+  padding-inline: 10px;
+  border-radius: 10px;
+  border:dotted;
+  border-color: lightgrey;
+}
+
+.match_info_row {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.match_teams_club_team {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.match_info_date_place {
+  width: 33%;
+}
+
+.match_info_date {
+  width: 15%
+}
+
+.match_info_gymnase {
+  width: 15%;
+}
+
+.match_info_address {
+  width: 30%;
+}
+
+.match_info_accompanists {
+  width: 30%;
+}
+
+.match_info_accompanists_list {
+  display: flex;
+}
+
+.match_info_label {
+  font-size: small;
+  font-weight: 100;
+  color: grey;
+}
+
+.match_teams_score {
+  width: 40%
+}
+
+.match_teams_club {
+  width: 50%;
+}
+
+.match_teams_team {
+  width: 50%;
+
+}
+
+.match_teams_sets {
+  width: 15%;
+}
+
+
+@media screen and (max-width: 540px) {
+
+
+  .team_details_picture_players {
+    flex-direction: column;
+  }
+
+  .team_details_picture_frame {
+    width: 100%;
+  }
+
+  .team_details_players {
+    width: 100%;
+  }
+
+  .match_info_row {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+
+  .match_teams_club_team {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .match_info_date {
+    width: 100%;
+    margin-block: 5px;
+    text-align: center;
+  }
+
+  .match_info_gymnase {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .match_info_address {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .match_info_accompanists {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .match_info_accompanists_list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .match_teams_club {
+    width: 50%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .match_teams_team {
+    width: 50%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .match_teams_sets {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .match_teams_score {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+
+
+
+
+}

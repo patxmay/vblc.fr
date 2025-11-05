@@ -1,0 +1,75 @@
+.bo_flash_news_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flash_news_creation_frame {
+  width: 100%;
+  padding: 10px;
+}
+
+.create_flash_news_form_group {
+  margin-block: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.create_flash_news_form_group {
+  margin-block: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.create_flash_news_item_title_frame_width {
+  width: 20%;
+}
+
+.create_flash_news_input {
+  height: 30px;
+  margin-inline: 10px;
+  border-radius: 10px;
+  border: none;
+  padding-inline: 10px;
+  background-color: #FFFFFF;
+}
+
+.create_flash_news_large_input {
+  width: 300px;
+  cursor: pointer;
+}
+
+.create_flash_news_extra_large_input {
+  width: 500px;
+}
+
+.create_flash_news_description {
+  width: 70%;
+  height: 100px;
+  padding: 10px;
+}
+
+.flash_news_button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  color: #FFFFFF;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 20px;
+}
+
+.active_validation_button {
+  background-color: green;
+  cursor: pointer;
+}
+
+.inactive_validation_button {
+  background-color: lightgray;
+}
+

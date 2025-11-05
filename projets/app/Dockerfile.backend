@@ -1,0 +1,17 @@
+FROM node:18-slim
+
+WORKDIR /app
+
+# Copier package.json + package-lock.json du backend
+COPY package*.json ./
+
+RUN npm install --only=production --no-audit --no-fund
+
+# Copier le code backend
+COPY . ./
+
+# Exposer port 3001
+EXPOSE 3001
+
+# tout le contenu de /vblc/vblc2/app (sur l’hote) sera copie dans /app (dans le conteneur).
+CMD ["npm", "start"]

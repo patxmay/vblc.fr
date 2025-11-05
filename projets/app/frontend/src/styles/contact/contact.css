@@ -1,0 +1,129 @@
+.contact_big_frame {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_frame {
+  width: 50%;
+  background-color: #FFFFFF;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.formGroup_frame {
+  width: 100%;
+  margin-block: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contact_form_label {
+  width: 15%
+}
+
+.contact_form_short_input {
+  width: 30%;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #F0F3F4;
+  padding: 10px;
+}
+
+.contact_form_medium_input {
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #F0F3F4;
+  padding: 10px;
+}
+
+.contact_form_large_input {
+  width: 85%;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #F0F3F4;
+  padding: 10px;
+}
+
+.contact_form_large_text_input {
+  width: 85%;
+  height: 100px;
+  border: none;
+  border-radius: 15px;
+  background-color: #F0F3F4;
+  padding: 10px;
+  
+}
+
+.button_frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-block: 20px; */
+}
+
+.contact_form_button {
+  width: 40%;
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  margin-block: 20px;
+  margin-inline: 10px;
+  color: #FFFFFF;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.contact_form_button_cancel {
+  background-color: red;
+}
+
+.contact_form_button_send {
+  background-color: green;
+}
+
+.sentSuccessfullMessage {
+  text-align: center;
+  color: green;
+}
+
+@media screen and (max-width: 540px) {
+  .contact_frame {
+    width: 100%;
+  }
+
+  .formGroup_frame {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact_form_short_input {
+    width: 100%;
+  }
+
+  .contact_form_medium_input {
+    width: 100%;
+  }
+
+  .contact_form_large_input {
+    width: 100%;
+  }
+
+  .contact_form_large_text_input {
+    width: 100%;
+  }
+
+  .contact_form_button {
+    width: 50%;
+  }
+
+}

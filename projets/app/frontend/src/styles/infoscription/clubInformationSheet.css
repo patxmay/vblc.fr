@@ -1,0 +1,269 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.center_text {
+  text-align: center;
+}
+
+.club_info_sheet_frame {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 10px; */
+  background-color: #FFFFFF;
+  margin-block: 10px;
+  margin-top: 20px;
+}
+
+.grey_text {
+  color: gray;
+  text-align: center;
+  padding-inline: 20px;
+}
+
+.club_info_sheet_part {
+  width: 100%;
+  margin-block: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.part_title {
+  color: red;
+  font-size: larger;
+  font-weight: 200;
+  margin-bottom: 20px;
+  padding-inline: 20px;
+}
+
+.input_css {
+  height: 30px;
+  /* background-color: #F0F3F4; */
+  border: solid;
+  border-color: #F0F3F4;
+  border-radius: 15px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+/* DOUBLE INPUTS FRAME */
+.club_info_sheet_double_inputs_frame {
+  width: 100%;
+  display: flex;
+  margin-block: 10px;
+  justify-content: space-between;
+
+}
+
+.club_info_sheet_double_inputs {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  padding-inline: 10px;
+}
+
+.club_info_sheet_item_label_for_double_inputs {
+  width: 40%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.double_inputs {
+  width: 60%;
+}
+
+/* SINGLE INPUT FRAME */
+.club_info_sheet_single_inputs_frame {
+  width: 100%;
+  margin-block: 10px;
+  padding-inline: 10px;
+}
+
+.club_info_sheet_single_inputs {
+  width: 100%;
+  display: flex;
+}
+
+
+.club_info_sheet_item_label_for_single_inputs {
+  width: 20%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.single_inputs {
+  width: 80%;
+
+}
+
+.club_info_sheet_support_frame {
+  width: 100%;
+}
+
+.club_info_sheet_support_check_box_frame {
+  width: 90%;
+  margin-block: 10px;
+  margin-inline: 30px;
+  padding: 10px;
+  display: flex;
+}
+
+.check_box {
+  margin-right: 10px;
+  background-color: pink;
+}
+
+.check_box_frame {
+  width: 15px;
+  height: 15px;
+  border: solid;
+  border-color: black;
+}
+
+.radio_check_box_big_frame {
+  margin-block: 30px;
+}
+
+.autorization_check_box_label_frame {
+  display: flex;
+  margin-inline: 20px;
+  align-items: center;
+}
+
+.image_autorisation_input_frame {
+  display: flex;
+  align-items: center;
+  margin-block: 30px;
+}
+.club_info_sheet_autorisation_input_frame {
+  display: flex;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.space_right {
+  margin-right: 10px;
+}
+
+.autorisation_input {
+  width: 230px;
+  margin-right: 10px;
+}
+
+.parent_support_frame {
+  width: 100%;
+  border: solid;
+  border-color: #F0F3F4;
+  padding-inline: 10px;
+}
+
+.parent_support_radio_check_box_frame {
+  margin-block: 10px;
+
+  display: flex;
+}
+
+.parent_support_data_frame {
+  margin-block: 10px;
+  background-color: pink;
+}
+
+.parent_autorisation_input_frame {
+  margin-block: 10px;
+}
+
+.signature_frame {
+  width: 100%;
+  height: 100px;
+  border: solid;
+  border-color: #F0F3F4;
+}
+
+.print_button {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: green;
+  font-size: medium;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.print_button_frame {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 540px) {
+  .club_info_sheet_frame {
+    width: 100%;
+  }
+
+  /* DOUBLE INPUTS FRAME */
+  .club_info_sheet_double_inputs_frame {
+    width: 100%;
+    margin-block: 0px;
+    flex-direction: column;
+  }
+
+  .club_info_sheet_double_inputs {
+    width: 100%;
+    margin-block: 10px;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .club_info_sheet_item_label_for_double_inputs {
+    width: 100%;
+  }
+
+  .double_inputs {
+    width: 100%;
+  }
+
+  /* SINGLE INPUT FRAME */
+  .club_info_sheet_single_inputs_frame {
+    flex-direction: column;
+
+  }
+
+  .club_info_sheet_single_inputs {
+    flex-direction: column;
+  }
+
+  .club_info_sheet_item_label_for_single_inputs {
+    width: 100%;
+  }
+
+  .single_inputs {
+    width: 100%;
+  }
+
+  .club_info_sheet_autorisation_input_frame {
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  .autorisation_input {
+    width: 100%;
+    margin-block: 10px;
+  }
+
+  .image_autorisation_input_frame {
+    flex-direction: column;
+    align-items: start;
+  }
+
+}

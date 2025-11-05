@@ -1,0 +1,391 @@
+services:
+# -------------------------------------------------------------------------
+# traefik
+# -------------------------------------------------------------------------
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: always
+    command:
+      - "--api.dashboard=true"
+      # comme Traefik n’ecoute pas sur 8081 dans le container, malgré le mapping 8081:8080, 
+      # le dashboard ne s’active que si on ajoute une option supplémentaire : 
+      # assure que ton dashboard reste bien accessible sur http://IP:8081/dashboard/.
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      # pour ancien site vblcwp sous wordpress
+      - "--entrypoints.websecure82.address=:82"
+      # letsencrypt
+      - "--certificatesresolvers.letsencrypt.acme.email=devmapluz@gmail.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      # logs du dashboard de traefix
+      - "--log.level=DEBUG"
+      # pour debug : pour que le provider Docker de Traefik expose le service
+      - "--providers.docker.exposedbydefault=true"
+    ports:
+      - "80:80"
+      - "443:443"
+      # Dashboard Traefik accessible sur http://149.202.41.7:8081/dashboard
+      - "8081:8080"
+      # vblcwp
+      - "82:82"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"
+    networks:
+      - web
+
+# ---------------------------------------------------------------------------------------------------------
+# phpmyadmin
+# ---------------------------------------------------------------------------------------------------------
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 64M
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`www.vblc.fr`) && PathPrefix(`/phpmyadmin`)"
+      - "traefik.http.routers.phpmyadmin.entrypoints=websecure"
+      - "traefik.http.routers.phpmyadmin.tls.certresolver=letsencrypt"
+      - "traefik.http.middlewares.phpmyadmin-stripprefix.stripprefix.prefixes=/phpmyadmin"
+      - "traefik.http.routers.phpmyadmin.middlewares=phpmyadmin-stripprefix"
+      - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
+    volumes:
+      - ./config.inc.php:/tmp/config.inc.php      
+    entrypoint: 
+      - /bin/sh
+      - -c
+      - |
+        cp /tmp/config.inc.php /etc/phpmyadmin/config.inc.php && \
+        apache2-foreground 
+    networks:
+      - web
+
+# ---------------------------------------------------------------------------------------------------------
+# vblc wordpress : wordpress(contient apache+php+mysql)
+# ---------------------------------------------------------------------------------------------------------
+  vblcwp:
+    image: wordpress:latest
+    container_name: vblcwp
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: vblcwp_mysql
+      WORDPRESS_DB_NAME: vblc
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: Uhaina99*
+      WORDPRESS_HOME: https://www.vblc.fr:82/vblc
+      WORDPRESS_SITEURL: https://www.vblc.fr:82/vblc
+    volumes:
+      - "/var/www/vblc/vblc:/var/www/html"
+      # on force le root apache pour dolibarr
+      - "./apache-vblc.conf:/tmp/apache-vblc.conf"      
+      # modifier la config de wordpress
+      - "/var/www/vblc/vblc/wp-config.docker.php:/tmp/wp-config.docker.php"
+      # config de php
+      - "./php.ini:/tmp/php.ini"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vblcwp.rule=Host(`vblc.fr`,`www.vblc.fr`) && PathPrefix(`/vblc`)"
+      - "traefik.http.routers.vblcwp.entrypoints=websecure82"
+      - "traefik.http.routers.vblcwp.tls.certresolver=letsencrypt"
+      - "traefik.http.services.vblcwp.loadbalancer.server.port=80"
+      # normalement cette ligne est chargee par defaut
+      - "traefik.http.middlewares.wordpress-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+    depends_on:
+      - vblcwp_mysql
+    entrypoint: 
+      - /bin/sh
+      - -c
+      - |
+        cp /tmp/apache-vblc.conf /etc/apache2/sites-enabled/vblc.conf && \
+        cp /tmp/wp-config.docker.php /var/www/html/wp-config.php && \
+        cp /tmp/php.ini /usr/local/etc/php/conf.d/uploads.ini && \
+        apache2-foreground       
+    networks:
+      - web
+       
+  vblcwp_mysql:
+    image: mysql:8.0
+    container_name: vblcwp_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Uhaina99*
+      MYSQL_DATABASE: vblc
+      MYSQL_USER: patxmay
+      MYSQL_PASSWORD: Uhaina99*
+      MYSQL_INIT_SQL: "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'"
+    volumes:
+      - "mysql_vblcwp_data:/var/lib/mysql"
+    networks:
+      - web
+
+# ---------------------------------------------------------------------------------------------------------
+# blvb wordpress : wordpress(contient apache+php+mysql)
+# ---------------------------------------------------------------------------------------------------------
+  blvbwp:
+    image: wordpress:latest    
+#    build:
+#      context: .
+#      dockerfile: Dockerfile_wordpress
+    container_name: blvbwp
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: blvbwp_mysql
+      WORDPRESS_DB_NAME: blvb
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: Uhaina99*
+      WORDPRESS_HOME: https://www.blvb.fr/blvb
+      WORDPRESS_SITEURL: https://www.blvb.fr/blvb
+    volumes:
+      - "/var/www/blvb/blvb:/var/www/html"
+      # on force le root apache pour dolibarr
+      - "./apache-blvb.conf:/tmp/apache-blvb.conf"      
+      # modifier la config de wordpress
+      - "/var/www/blvb/blvb/wp-config.docker.php:/tmp/wp-config.docker.php"
+      # config de php
+      - "./php.ini:/tmp/php.ini"      
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blvbwp.rule=Host(`blvb.fr`,`www.blvb.fr`) && PathPrefix(`/blvb`)"
+      - "traefik.http.routers.blvbwp.entrypoints=websecure"
+      - "traefik.http.routers.blvbwp.tls.certresolver=letsencrypt"
+      - "traefik.http.services.blvbwp.loadbalancer.server.port=80"
+      # normalement cette ligne est charge par defaut
+      - "traefik.http.middlewares.wordpress-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+    depends_on:
+      - blvbwp_mysql
+    entrypoint: 
+      - /bin/sh
+      - -c
+      - |
+        cp /tmp/apache-blvb.conf /etc/apache2/sites-enabled/blvb.conf && \
+        cp /tmp/wp-config.docker.php /var/www/html/wp-config.php && \
+        cp /tmp/php.ini /usr/local/etc/php/conf.d/uploads.ini && \
+        apache2-foreground       
+    networks:
+      - web
+       
+  blvbwp_mysql:
+    image: mysql:8.0
+    container_name: blvbwp_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Uhaina99*
+      MYSQL_DATABASE: blvb
+      MYSQL_USER: patxmay
+      MYSQL_PASSWORD: Uhaina99*
+      MYSQL_INIT_SQL: "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'"
+    volumes:
+      - "mysql_blvbwp_data:/var/lib/mysql"
+    networks:
+      - web
+      
+# ----------------------------------------------------------------------------------------------
+# vblc dolibarr (dolivblc) : dolibarr(contient apache+php+mysql)
+# ----------------------------------------------------------------------------------------------
+  dolivblc:
+    build:
+      context: .
+      dockerfile: Dockerfile_dolibarr
+    container_name: dolivblc
+    restart: always
+    environment:
+      DOLI_DB_HOST: dolivblc_mysql
+      DOLI_DB_NAME: dolivblc
+      DOLI_DB_USER: admin
+      DOLI_DB_PASSWORD: Uhaina99*
+      DOLI_URL_ROOT: https://www.vblc.fr/dolivblc
+    volumes:
+      # mapping documents
+      - "/var/www/vblc/dolivblc/documents:/var/www/html/documents"
+      # mapping conf
+      - "/var/www/vblc/dolivblc/htdocs/conf:/var/www/html/htdocs/conf"
+      - "/var/www/vblc/dolivblc/htdocs/conf/conf.docker.php:/tmp/conf.docker.php"
+      # mapping custom
+      - "/var/www/vblc/dolivblc/htdocs/custom:/var/www/html/htdocs/custom" 
+      # on force le root apache pour dolibarr
+      - "./apache-dolivblc.conf:/tmp/apache-dolivblc.conf"
+      # config de php
+      - "./php.ini:/tmp/php.ini"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dolivblc.rule=Host(`vblc.fr`,`www.vblc.fr`) && PathPrefix(`/dolivblc`)"
+      - "traefik.http.routers.dolivblc.entrypoints=websecure"
+      - "traefik.http.routers.dolivblc.tls.certresolver=letsencrypt"
+      - "traefik.http.services.dolivblc.loadbalancer.server.port=80"
+      # pour eviter la confusion avec vblc2
+      - "traefik.http.routers.dolivblc.priority=2"
+    depends_on:
+      - dolivblc_mysql
+    entrypoint: 
+      - /bin/sh
+      - -c
+      - |
+        cp /tmp/apache-dolivblc.conf /etc/apache2/sites-enabled/dolibarr.conf && \
+        cp /tmp/conf.docker.php /var/www/html/htdocs/conf/conf.php && \
+        cp /tmp/php.ini /usr/local/etc/php/conf.d/uploads.ini && \
+        apache2-foreground
+    networks:
+      - web
+
+  dolivblc_mysql:
+    image: mysql:8.0
+    container_name: dolivblc_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Uhaina99*
+      MYSQL_DATABASE: dolivblc
+      MYSQL_USER: patxmay
+      MYSQL_PASSWORD: Uhaina99*
+      # MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
+      MYSQL_INIT_SQL: "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'"
+    volumes:
+      - "mysql_dolivblc_data:/var/lib/mysql"
+    networks:
+      - web
+      
+# ----------------------------------------------------------------------------------------------
+# cdvb dolibarr (dolicdvb) : dolibarr(contient apache+php+mysql)
+# ----------------------------------------------------------------------------------------------
+  dolicdvb:
+    build:
+      context: .
+      dockerfile: Dockerfile_dolibarr
+    container_name: dolicdvb
+    restart: always
+    environment:
+      DOLI_DB_HOST: dolicdvb_mysql
+      DOLI_DB_NAME: dolicdvb
+      DOLI_DB_USER: admin
+      DOLI_DB_PASSWORD: Uhaina99*
+      DOLI_URL_ROOT: https://www.vblc.fr/dolicdvb
+    volumes:
+      # mapping documents
+      - "/var/www/vblc/dolicdvb/documents:/var/www/html/documents"
+      # mapping conf
+      - "/var/www/vblc/dolicdvb/htdocs/conf:/var/www/html/htdocs/conf"
+      - "/var/www/vblc/dolicdvb/htdocs/conf/conf.docker.php:/tmp/conf.docker.php"
+      # mapping custom
+      - "/var/www/vblc/dolivblc/htdocs/custom:/var/www/html/htdocs/custom" 
+      # on force le root apache pour dolibarr
+      - "./apache-dolicdvb.conf:/tmp/apache-dolicdvb.conf"
+      # config de php
+      - "./php.ini:/tmp/php.ini"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dolicdvb.rule=Host(`vblc.fr`,`www.vblc.fr`) && PathPrefix(`/dolicdvb`)"
+      - "traefik.http.routers.dolicdvb.entrypoints=websecure"
+      - "traefik.http.routers.dolicdvb.tls.certresolver=letsencrypt"
+      - "traefik.http.services.dolicdvb.loadbalancer.server.port=80"
+      # pour eviter la confusion avec vblc2
+      - "traefik.http.routers.dolicdvb.priority=3"
+    depends_on:
+      - dolicdvb_mysql
+    entrypoint: 
+      - /bin/sh
+      - -c
+      - |
+        cp /tmp/apache-dolicdvb.conf /etc/apache2/sites-enabled/dolibarr.conf && \
+        cp /tmp/conf.docker.php /var/www/html/htdocs/conf/conf.php && \
+        cp /tmp/php.ini /usr/local/etc/php/conf.d/uploads.ini && \
+        apache2-foreground
+    networks:
+      - web
+
+  dolicdvb_mysql:
+    image: mysql:8.0
+    container_name: dolicdvb_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Uhaina99*
+      MYSQL_DATABASE: dolicdvb
+      MYSQL_USER: patxmay
+      MYSQL_PASSWORD: Uhaina99*
+      # MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
+      MYSQL_INIT_SQL: "SET sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'"
+    volumes:
+      - "mysql_dolicdvb_data:/var/lib/mysql"
+    networks:
+      - web
+      
+
+# ----------------------------------------------------------------------------------------------
+# vblc2 : react + express + mongodb
+# builder le FRONTEND (React) : Dockerfile.frontend doit pointer sur /app/frontend pour la partie build React.
+# builder le BACKEND (Express): autre Dockerfile.backend qui lance le backend depuis /app.
+# ----------------------------------------------------------------------------------------------
+  frontend:
+    build:
+      context: ./vblc/vblc2
+      dockerfile: Dockerfile.frontend # placer dans /vblc/vblc2/
+    container_name: vblc2_frontend
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./vblc/vblc2/app:/app
+    networks:
+      - web
+    environment:
+      - CHOKIDAR_USEPOLLING=true   # utile pour hot reload dans Docker
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vblc2_front.rule=Host(`www.vblc.fr`) && PathPrefix(`/`) && !PathPrefix(`/dolivblc`) && !PathPrefix(`/dolicdvb`)"
+      - "traefik.http.routers.vblc2_front.entrypoints=websecure"
+      - "traefik.http.routers.vblc2_front.tls.certresolver=letsencrypt"
+      - "traefik.http.services.vblc2_front.loadbalancer.server.port=80"
+      - "traefik.http.routers.vblc2_front.priority=1"
+  backend:
+    build:
+      context: ./vblc/vblc2/app
+      dockerfile: Dockerfile.backend # placer dans /vblc/vblc2/app/Dockerfile.backend
+    container_name: vblc2_backend
+    restart: always
+    environment:
+      - MONGO_URL=mongodb://vblc2_mongo:27017/vblc2db
+    depends_on:
+      - vblc2_mongo
+    networks:
+      - web
+    ports:
+      - "3001:3001"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vblc2_back.rule=Host(`api.vblc.fr`)"
+      - "traefik.http.routers.vblc2_back.entrypoints=websecure"
+      - "traefik.http.routers.vblc2_back.tls.certresolver=letsencrypt"
+      - "traefik.http.services.vblc2_back.loadbalancer.server.port=3001"
+
+  vblc2_mongo:
+    image: mongo:6
+    container_name: vblc2_mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: vblc2db
+    volumes:
+      - "mongodb_vblc2_data:/data/db"
+    networks:
+      - web
+
+# -------------------------------------------------------------------------
+# global : volume et network
+# -------------------------------------------------------------------------
+volumes:
+  mysql_vblcwp_data:
+  mysql_blvbwp_data:
+  mysql_dolivblc_data:
+  mysql_dolicdvb_data:
+  mongodb_vblc2_data:
+
+networks:
+  web:
+    driver: bridge
+

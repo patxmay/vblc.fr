@@ -1,0 +1,145 @@
+.bo_upload_beach_picture_section_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload_beach_picture_sections {
+  width: 100%;
+  padding: 10px;
+}
+
+.section_filter_by_title {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  margin-block: 10px;
+  padding-inline: 10px;
+}
+
+.card_big_frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-block: 10px;
+}
+
+.card {
+  width: 300px;
+  background-color: #FFFFFF;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.card_selected {
+  border: solid;
+  border-color: red;
+}
+
+.upload_big_frame {
+  width: 100%;
+  background-color: #FFFFFF;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.picture_shape {
+  width: 200px;
+  height: 100px;
+  /* border-radius: 50px; */
+  background-color: lightgray;
+  margin-right: 20px;
+}
+
+.upload_a_picture {
+  display: flex;
+  align-items: center;
+}
+
+.upload_beach_picture_button_cloudinary {
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: medium;
+  margin: 20px;
+  background-color: lightgray;
+  padding-inline: 20px;
+  cursor: pointer;
+}
+
+.upload_beach_picture_button_cloudinary_activated {
+  background-color: green;
+}
+
+.upload_beach_picture_button_mongodb_frame {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  margin-block: 30px;
+}
+
+.upload_beach_picture_button_mongodb {
+  padding-inline: 20px;
+  height: 30px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 15px;
+  font-size: medium;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.upload_beach_picture_button_mongodb_activated {
+  background-color: green;
+
+}
+
+.picture_to_delete {
+  display: flex;
+  height: 100px;
+  margin-right: 10px;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.picture_to_delete_selected {
+  border: solid;
+  border-color: red;
+  border-width: 2px;
+}
+
+.pictures_frame {
+  display: flex;
+  width: 100%;
+}
+
+.picture_delete_button_frame {
+  display: flex;
+ justify-content: center;
+}
+
+.delete_picture_button {
+  padding-inline: 20px;
+  height: 30px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 15px;
+  font-size: medium;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-block: 20px;
+}
+
+.delete_picture_button_activated {
+  background-color: green;
+}
+

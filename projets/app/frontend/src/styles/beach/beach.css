@@ -1,0 +1,218 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.key_frame {
+  margin-top: 20px;
+}
+
+.beach_section {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGO VBLC BEACH */
+.logo_placement {
+  position: absolute;
+  left: 40px;
+  top: 180px;
+}
+
+.beach_logo {
+  width: 200px;
+  height: 200px;
+}
+
+/* LE CAROUSEL */
+
+.carousel_picture_frame {
+  white-space: nowrap;
+  transition: transform 0.9s;
+  width: 100%;
+}
+
+.carousel_picture_buttons_frame {
+  overflow: hidden;
+  width: 100%;
+}
+
+.beach_carousel_picture_buttons_frame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+/* LES BOUTONS QUI ACTIONNENT LES CAROUSELS */
+.beach_carousel_left_button_bis {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.beach_carousel_right_button_bis {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel_picture_item_frame {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel_picture_item {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel_picture {
+  width: 100%;
+  height: 100%;
+}
+
+
+.beach_point_indicators {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.beach_point_indicator_buttons {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-inline: 5px;
+}
+
+.beach_point_indicator_symbol_unactive {
+  background-color: #FFFFFF;
+}
+
+.beach_point_indicator_symbol_active {
+  background-color: red;
+}
+
+.section_details {
+  width: 100%;
+  padding-block: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section_details_items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.section_details_title {
+  font-size: medium;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: red;
+}
+
+.beach_coach {
+  width: 100%;
+  display: flex;
+}
+
+.beach_coach_item_2 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+
+}
+
+.beach_coach_item_1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.beach_coach_pict {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  background-color: lightgray;
+  margin-right: 10px;
+}
+
+.coach_pict {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+
+.summer_coach_item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 540px) {
+  .beach_section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* LOGO VBLC BEACH */
+  .logo_placement {
+    position: absolute;
+    left: 25px;
+    top: 160px;
+  }
+
+  .beach_logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section_details {
+    flex-direction: column;
+  }
+
+  .section_details_items {
+    width: 100%;
+  }
+
+  .beach_coach {
+    width: 100%;
+    display: flex;
+  }
+
+  .beach_coach_data {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

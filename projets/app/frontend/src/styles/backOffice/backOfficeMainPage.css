@@ -1,0 +1,38 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+
+}
+
+.bo_big_frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.bo_menu_frame {
+  width: 15%;
+  background-color: #E5E7E9;
+  padding: 10px;
+}
+
+.bo_menu_title {
+  margin-block: 10px;
+  padding-inline: 10px;
+}
+
+.bo_menu_title_selected {
+  color: red;
+}
+
+.bo_menu_title:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.bo_content_frame {
+  width: 85%;
+  padding: 10px;
+}

@@ -1,0 +1,11 @@
+FROM node:18-slim
+
+WORKDIR /app
+
+COPY app/frontend/package*.json ./
+RUN npm install
+
+# Pour le développement, ne copie PAS le reste ici : le volume Docker s'en occupe
+
+EXPOSE 3000
+CMD ["npm", "start"]

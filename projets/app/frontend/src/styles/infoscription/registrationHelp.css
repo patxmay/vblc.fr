@@ -1,0 +1,135 @@
+.main {
+  padding-top: 110px;
+  align-items: center;
+  background-color: "transparent";
+  padding-inline: 10px;
+}
+
+.registration_help_carousel_big_frame {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration_help_carousel_inner_frame {
+  white-space: nowrap;
+  transition: transform 0.5s;
+  width: inherit
+}
+
+.registration_help_carousel_items_frame {
+  display: inline-flex;
+  width: 100%;
+  height: 600px;
+  background-color: #FFFFFF;
+}
+
+.registration_help_carousel_item_frame {
+  width: 100%;
+}
+
+.registration_help_carousel_title_frame {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.registration_help_carousel_title {
+  width: 100%;
+  font-size: larger;
+  color: red;
+  text-align: center;
+}
+
+.registration_help_carousel_image_frame {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration_help_carousel_image {
+  height: 90%;
+
+}
+
+.registration_help_carousel_text_frame {
+  width: 100%;
+  margin-block: 20px;
+  padding: 10px;
+}
+
+.registration_help_carousel_text {
+  white-space: normal;
+  text-align: center;
+}
+
+.registration_help_carousel_indicators_frame {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration_help_indicator_buttons {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-inline: 5px;
+}
+
+.registration_help_indicator_symbol {
+  background-color: lightgrey;
+}
+
+.registration_help_indicator_symbol_active {
+  background-color: red;
+}
+
+.registration_help_carousel_buttons_frame {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-block: 20px;
+}
+
+.registration_help_carousel_views_buttons {
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  color: #FFFFFF;
+  font-size: medium;
+  cursor: pointer;
+  margin-inline: 20px;
+}
+
+.registration_help_carousel_previews_button {
+  background-color: red;
+}
+
+.registration_help_carousel_next_button {
+  background-color: green;
+}
+
+@media screen and (max-width: 540px) {
+
+  .registration_help_carousel_items_frame {
+    height: 500px;
+  }
+
+  .registration_help_carousel_image_frame {
+    width: 100%;
+    height: 30%;
+  }
+
+  .registration_help_carousel_image {
+    height: 100%;
+
+  }
+
+}

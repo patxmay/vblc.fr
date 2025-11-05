@@ -1,0 +1,104 @@
+.bo_edit_beach_big_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit_beach_sections {
+  width: 100%;
+  padding: 10px;
+}
+
+.edit_beach_card_big_frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-block: 10px;
+}
+
+.edit_beach_items_to_modify {
+  display: flex;
+  align-items: center;
+
+
+}
+
+.edit_beach_items_form_group {
+  height: 30px;
+  margin-block: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-inline: 10px;
+
+}
+
+.edit_beach_items_label_frame {
+  width: 200px;
+}
+
+.edit_beach_input {
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: lightgray;
+  padding-inline: 10px;
+}
+
+.edit_beach_short_width {
+  width: 190px;
+}
+
+.edit_beach_medium_width {
+  width: 400px;
+}
+
+.edit_beach_text_data_500 {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.edit_beach_text_data_200 {
+  margin-right: 10px;
+  font-weight: 200;
+  color: darkgray;
+}
+
+.button_shape {
+  height: 30px;
+  width: 100px;
+  border-radius: 15px;
+  padding-inline: 10px;
+  border: none;
+  color: #FFFFFF;
+  margin-inline: 10px;
+  /* cursor: pointer; */
+}
+
+.lightgrey_button {
+  background-color: lightgrey;
+}
+
+.red_button {
+  background-color: red;
+}
+
+.red_button:hover {
+  cursor: pointer;
+}
+
+.green_button {
+  background-color: green;
+}
+
+.green_button:hover {
+  cursor: pointer;
+}
+
+.edit_beach_coach_picture_shape {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: lightgray;
+}
