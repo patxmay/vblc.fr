@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ limit: '25mb', extended: false }));
 
 
 const corsOptions = {
-  origin: '*',
+  origin: 'https://www.vblc.fr',
   credentials: true,
   optionSuccessStatus: 200
 };

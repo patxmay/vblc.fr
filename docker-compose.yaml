@@ -326,7 +326,7 @@ services:
     build:
       context: ./vblc/vblc2
       dockerfile: Dockerfile.frontend # placer dans /vblc/vblc2/
-    container_name: vblc2_frontend
+    container_name: vblc2_front
     restart: always
     ports:
       - "8080:80"
@@ -347,7 +347,7 @@ services:
     build:
       context: ./vblc/vblc2/app
       dockerfile: Dockerfile.backend # placer dans /vblc/vblc2/app/Dockerfile.backend
-    container_name: vblc2_backend
+    container_name: vblc2_back
     restart: always
     environment:
       - MONGO_URL=mongodb://vblc2_mongo:27017/vblc2db

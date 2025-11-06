@@ -13,7 +13,7 @@ function Beach() {
 
   useEffect(() => {
     const findVblcBeachSectionData = async () => {
-      const data = await fetch('/beachRoute/loadBeachSectionData')
+      const data = await fetch('https://api.vblc.fr/beachRoute/loadBeachSectionData')
       const body = await data.json();
       setVblcBeachData(body)
     }
